@@ -1,0 +1,79 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "Zst5iK",
+    "name": "Age",
+    "comment": "Визначимо вік користувача для рівня складності."
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "Визначимо вік",
+        "description": "",
+        "id": "tM4LlM"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "TrTHCn"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_TrTHCn()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "property": "user.age",
+          "outputFormat": "index",
+          "choices": [
+            "до - 10 років ",
+            "10 - 16 років"
+          ]
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "u1WbT2"
+          },
+          "condition": "=user.age == 0",
+          "actions": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "WqOgOn"
+              },
+              "activityProcessed": true,
+              "dialog": "task_kids"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "TlBjSU"
+              },
+              "activityProcessed": true,
+              "dialog": "task_teen"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "Age.lg",
+  "recognizer": "Age.lu.qna",
+  "id": "Age"
+}

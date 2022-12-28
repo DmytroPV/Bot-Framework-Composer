@@ -1,0 +1,50 @@
+[import](common.lg)
+
+# ChoiceInput_Prompt_L4lJ1a_text()
+- Продовжити?
+# ChoiceInput_Prompt_L4lJ1a()
+[Activity
+    Text = ${ChoiceInput_Prompt_L4lJ1a_text()}
+]
+
+# SendActivity_ySYdeA_text()
+- Супер )
+# SendActivity_ySYdeA()
+[Activity
+    Text = ${SendActivity_ySYdeA_text()}
+]
+
+# SendActivity_H45ip4_text()
+- ```Шкода, що Ви не маєте змоги продовжити.
+Я завжди готовий до спілкування.
+Буду очікувати на Ваше повернення.```
+- Для продовження потрібно перезавантажити бота.
+# SendActivity_H45ip4()
+[Activity
+    Text = ${SendActivity_H45ip4_text()}
+]
+
+# SendActivity_PEOorS()
+[Activity
+    Text = ${SendActivity_PEOorS_text()}
+]
+
+# SendActivity_PEOorS_text()
+- ```Шкода, що ти не маєш змоги продовжити.
+Я завжди готовий до спілкування.
+Буду очікувати на твоє повернення.
+Для продовження потрібно перезавантажити бота.```
+# ChoiceInput_Prompt_9hbPk4()
+[Activity
+    Text = ${ChoiceInput_Prompt_9hbPk4_text()}
+]
+
+# ChoiceInput_Prompt_9hbPk4_text()
+- Продовжимо ${user.name}?
+# SendActivity_HtNeDJ()
+[Activity
+    Text = ${SendActivity_HtNeDJ_text()}
+]
+
+# SendActivity_HtNeDJ_text()
+- Супер )

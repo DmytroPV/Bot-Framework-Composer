@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.LuisRecognizer",
+  "id": "LUIS_task_kids",
+  "applicationId": "=settings.luis.task_kids_en_us_lu.appId",
+  "version": "=settings.luis.task_kids_en_us_lu.version",
+  "endpoint": "=settings.luis.endpoint",
+  "endpointKey": "=settings.luis.endpointKey"
+}

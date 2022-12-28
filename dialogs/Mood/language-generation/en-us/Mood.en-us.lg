@@ -1,0 +1,35 @@
+[import](common.lg)
+
+# ChoiceInput_Prompt_dMwf7B()
+[Activity
+    Text = ${ChoiceInput_Prompt_dMwf7B_text()}
+]
+
+# ChoiceInput_Prompt_dMwf7B_text()
+- Який настрій у тебе зараз?
+# SendActivity_mzP5eC()
+[Activity
+    Text = ${SendActivity_mzP5eC_text()}
+]
+
+# SendActivity_mzP5eC_text()
+- ```Чудово, в мене зявилась робота 😇) 
+Тоді ми разом можемо вирішити цікаве завдання.```
+# SendActivity_YTgaZq()
+[Activity
+    Text = ${SendActivity_YTgaZq_text()}
+]
+
+# SendActivity_YTgaZq_text()
+- ```Дуже прикро( 
+Але це можна виправити 😉
+Тоді, я хотів би запропонувати тобі перегляд цікавих веселих відео, які точно вилікують твій настрій:
+
+https://www.pexels.com/search/videos/funny/```
+# SendActivity_kW09SA()
+[Activity
+    Text = ${SendActivity_kW09SA_text()}
+]
+
+# SendActivity_kW09SA_text()
+- Після перегляду повертайся з гарним настроєм.

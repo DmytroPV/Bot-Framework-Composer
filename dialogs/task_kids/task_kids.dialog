@@ -1,0 +1,173 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "t2O4rO",
+    "name": "task_kids",
+    "comment": "Завдання для найменших"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "Вирішення дитячої задачі",
+        "description": "",
+        "id": "YMKwXy"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "eAfTtN"
+          },
+          "activity": "${SendActivity_eAfTtN()}"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "zjt5G6"
+          },
+          "defaultLocale": "en-us",
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_zjt5G6()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "property": "user.kids.number.one",
+          "choices": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "recognizerOptions": {
+            "recognizeOrdinals": true
+          },
+          "outputFormat": "value"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "5mz4K9"
+          },
+          "activity": "${SendActivity_5mz4K9()}"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "8lhPrN"
+          },
+          "defaultLocale": "en-us",
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "property": "user.kids.number.two",
+          "choices": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "recognizerOptions": {
+            "recognizeOrdinals": true
+          },
+          "prompt": "${ChoiceInput_Prompt_8lhPrN()}",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "outputFormat": "value"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "lumUfz"
+          },
+          "activity": "${SendActivity_lumUfz()}"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "WZFoU8"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_WZFoU8()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "choices": [
+            "до меню 🙂",
+            "завершити 🙁"
+          ],
+          "outputFormat": "index",
+          "property": "user.kids.out"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "5G1LXG"
+          },
+          "condition": "=user.kids.out == 0",
+          "actions": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "AUMGWL"
+              },
+              "activityProcessed": true,
+              "dialog": "Start_menu"
+            },
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "oWLTk2"
+              }
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "3nROty"
+              },
+              "activity": "${SendActivity_3nROty()}"
+            },
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "ELnqBa"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "task_kids.lg",
+  "recognizer": "task_kids.lu.qna",
+  "id": "task_kids"
+}

@@ -1,0 +1,61 @@
+[import](common.lg)
+
+# SendActivity_SmSc9c_text()
+- ```guys 🤘
+Розумію, що у тебе багато справ. Але затримайся на хвилинку і ти побачиш деякі фішки.
+Пропоную виконати математичну операцію.```
+# SendActivity_SmSc9c()
+[Activity
+    Text = ${SendActivity_SmSc9c_text()}
+]
+
+# ChoiceInput_Prompt_jLo3u2_text()
+- Отже, обери будь яке із вказаних значень
+# ChoiceInput_Prompt_jLo3u2()
+[Activity
+    Text = ${ChoiceInput_Prompt_jLo3u2_text()}
+]
+
+# SendActivity_vFCKIc_text()
+- ${user.teen.number.one} *  __ + √__  = ?
+# SendActivity_vFCKIc()
+[Activity
+    Text = ${SendActivity_vFCKIc_text()}
+]
+
+# ChoiceInput_Prompt_49vqYD_text()
+- Обери наступну цифру:
+# ChoiceInput_Prompt_49vqYD()
+[Activity
+    Text = ${ChoiceInput_Prompt_49vqYD_text()}
+]
+
+# SendActivity_zzi9v5_text()
+- ```${user.teen.number.one} *  ${user.teen.number.two} + √(${user.teen.number.one} * ${user.teen.number.two}) = ${ round ((int(user.teen.number.one) * int(user.teen.number.two)) + (sqrt(int(user.teen.number.one) * int(user.teen.number.two))), 2) }
+Виглядає не погано 🔥
+
+${user.name} 🤝 дякую тобі за допомогу. У нас усе вийшло, ми отримали результат \- ${ round ((int(user.teen.number.one) * int(user.teen.number.two)) + (sqrt(int(user.teen.number.one) * int(user.teen.number.two))), 2) }
+
+```
+# SendActivity_zzi9v5()
+[Activity
+    Text = ${SendActivity_zzi9v5_text()}
+]
+
+# ChoiceInput_Prompt_VhNZqf_text()
+- ${user.name} ти маєш бажання продовжити чи завершити спілкування?
+# ChoiceInput_Prompt_VhNZqf()
+[Activity
+    Text = ${ChoiceInput_Prompt_VhNZqf_text()}
+]
+
+# SendActivity_TIslcF()
+[Activity
+    Text = ${SendActivity_TIslcF_text()}
+]
+
+# SendActivity_TIslcF_text()
+- ```Шкода, що ти не маєш змоги продовжити.
+Я завжди готовий до спілкування.
+Буду очікувати на твоє повернення.
+Для продовження потрібно перезавантажити бота.```

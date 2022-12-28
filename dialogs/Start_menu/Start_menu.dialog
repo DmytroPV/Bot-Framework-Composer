@@ -1,0 +1,101 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "REdddl",
+    "name": "Start_menu",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "Підтвердження продовження бесіди",
+        "description": "",
+        "id": "knOGa9"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "9hbPk4"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "choices": [
+            "Так",
+            "Ні"
+          ],
+          "property": "user.choice",
+          "style": "auto",
+          "outputFormat": "index",
+          "prompt": "${ChoiceInput_Prompt_9hbPk4()}"
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "d4kdM1"
+          },
+          "cases": [
+            {
+              "value": "0",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "HtNeDJ"
+                  },
+                  "activity": "${SendActivity_HtNeDJ()}"
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "TWeJY5"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "Mood"
+                }
+              ]
+            },
+            {
+              "value": "1",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "PEOorS"
+                  },
+                  "activity": "${SendActivity_PEOorS()}"
+                },
+                {
+                  "$kind": "Microsoft.EndDialog",
+                  "$designer": {
+                    "id": "fDt9qf"
+                  }
+                }
+              ]
+            }
+          ],
+          "condition": "user.choice",
+          "default": []
+        }
+      ]
+    }
+  ],
+  "generator": "Start_menu.lg",
+  "recognizer": "Start_menu.lu.qna",
+  "id": "Start_menu"
+}

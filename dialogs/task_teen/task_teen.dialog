@@ -1,0 +1,174 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "vgjKiu",
+    "name": "task_teen",
+    "comment": "Завдання для підлітків"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "Вирішення складнішої задчі",
+        "description": "",
+        "id": "Gj0DHk"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "SmSc9c",
+            "name": "Вирішення складнішої задачі"
+          },
+          "activity": "${SendActivity_SmSc9c()}"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "jLo3u2"
+          },
+          "defaultLocale": "en-us",
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_jLo3u2()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "property": "user.teen.number.one",
+          "choices": [
+            "45",
+            "266",
+            "309",
+            "4",
+            "10"
+          ],
+          "recognizerOptions": {
+            "recognizeOrdinals": true
+          },
+          "outputFormat": "value"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "vFCKIc"
+          },
+          "activity": "${SendActivity_vFCKIc()}"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "49vqYD"
+          },
+          "defaultLocale": "en-us",
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "property": "user.teen.number.two",
+          "choices": [
+            "78",
+            "232",
+            "98",
+            "122",
+            "81"
+          ],
+          "recognizerOptions": {
+            "recognizeOrdinals": true
+          },
+          "prompt": "${ChoiceInput_Prompt_49vqYD()}",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "outputFormat": "value"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "zzi9v5"
+          },
+          "activity": "${SendActivity_zzi9v5()}"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "VhNZqf"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_VhNZqf()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "choices": [
+            "до меню 🙂",
+            "завершити 🙁"
+          ],
+          "outputFormat": "index",
+          "property": "user.teen.out"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "peYWEb"
+          },
+          "condition": "=user.teen.out == 0",
+          "actions": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "haRxGN"
+              },
+              "activityProcessed": true,
+              "dialog": "Start_menu"
+            },
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "4NC40Q"
+              }
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "TIslcF"
+              },
+              "activity": "${SendActivity_TIslcF()}"
+            },
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "wbFFK4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "task_teen.lg",
+  "recognizer": "task_teen.lu.qna",
+  "id": "task_teen"
+}

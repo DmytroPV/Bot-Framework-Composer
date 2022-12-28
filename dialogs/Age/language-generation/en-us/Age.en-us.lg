@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# ChoiceInput_Prompt_TrTHCn()
+[Activity
+    Text = ${ChoiceInput_Prompt_TrTHCn_text()}
+]
+
+# ChoiceInput_Prompt_TrTHCn_text()
+- Обери свою вікову групу:

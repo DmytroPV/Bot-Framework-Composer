@@ -1,0 +1,34 @@
+[import](common.lg)
+
+# SendActivity_Greeting()
+[Activity
+    Text = ${SendActivity_Greeting_text()}
+]
+
+# SendActivity_Greeting_text()
+- ```Вітаю. 
+Я Archimedes.
+Я можу запропонувати тобі цікаво провести час.```
+# SendActivity_DidNotUnderstand()
+[Activity
+    Text = ${SendActivity_DidNotUnderstand_text()}
+]
+
+# SendActivity_DidNotUnderstand_text()
+- Помилка _ були  вказані невірні дані _
+# SendActivity_bBwtaK_text()
+- ```Шкода, що Ви не маєте змоги продовжити.
+Я завжди готовий до спілкування.
+Буду очікувати на Ваше повернення.```
+# SendActivity_bBwtaK()
+[Activity
+    Text = ${SendActivity_bBwtaK_text()}
+]
+
+# TextInput_Prompt_6OaFdM()
+[Activity
+    Text = ${TextInput_Prompt_6OaFdM_text()}
+]
+
+# TextInput_Prompt_6OaFdM_text()
+- Як тебе звуть?
